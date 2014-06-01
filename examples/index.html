@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Jar.js</title>
+        <script type="text/javascript" src="/src/jar.js"></script>
+        <script type="text/javascript">
+            jar.app({
+                name: "Test",
+                appPath: "app",
+                modules: [
+                   'Test.services.classone'
+                ],
+                launch: function (app) {
+                    console.log('App launched');
+                    var classone = jar.grab('Test.services.classone');
+
+                    console.log(classone.custom_method());
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Jar.js - App module's manager.</h1>
+    </body>
+</html>
